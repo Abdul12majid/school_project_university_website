@@ -1,0 +1,105 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<!--<section class="cta">
+     <h1>Admission</h1>
+     <p>
+        Offering extraordinary freedom to explore, to collaborate, and to
+        challenge yourself
+     </p>
+     <div class="btn-div cta-btn-div">
+       <a href="#form" class="hero-btn">Apply For Admission</a>
+     </div>
+  </section> -->
+  
+  
+
+    <!-- registration form -->
+    <div class="wrapper">
+      <div class="title">
+        <h1>Application Form</h1>
+      </div>
+
+      <form id="form" action="/register" method="POST">
+      <div class="form">
+        <div class="inputfield">
+          <label for="fname">First Name:</label>
+          <input type="text" name="surname" id="fname" class="input" required/>
+        </div>
+
+        <div class="inputfield">
+          <label for="lname">Last Name:</label>
+          <input type="text" name="lname" id="lname" class="input" required/>
+        </div>
+
+        <div class="inputfield">
+          <label for="bdate">Birth Date:</label>
+          <input type="date" name="bdate" id="bdate" class="input" required/>
+        </div>
+
+        <div class="inputfield">
+          <label for="gender">Gender:</label>
+          <div class="custom-select">
+            <select name="gender" id="gender" required="">
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="inputfield">
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" class="input" required/>
+        </div>
+
+        <div class="inputfield">
+          <label for="pnumber">Phone Number:</label>
+          <input type="text" name="pnumber" id="pnumber" class="input" required/>
+        </div>
+
+        <div class="inputfield">
+          <label for="course">Desired Course:</label>
+          <div class="custom-select">
+            <select name="course" id="course" required="">
+              <option value="">Select</option>
+              <option value="Medicine and Surgery">Medicine and Surgery</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="EduTech">EduTech</option>
+              <option value="Chem. Engineering">Chem. Engineering</option>
+              <option value="Mass Communication">Mass Communication</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="inputfield">
+          <input
+            type="submit"
+            name="submit"
+            id="submit"
+            value="Apply"
+            class="btn"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+  
+  {{ first_name }}
+
+    <footer class="footer" id="about">
+      <h3>About Us</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br />
+        Sunt molestias mollitia voluptate suscipit ex nulla eveniet, debitis
+        ullam officiis soluta magnam animi distinctio doloremque aliquid.
+      </p>
+      <div class="icons">
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-twitter"></i>
+        <i class="bi bi-linkedin"></i>
+        <p>&copy; Group 10; CSC 319</p>
+      </div>
+    </footer>
+{% endblock %}

@@ -1,0 +1,44 @@
+   <!-- Facilities -->
+{% extends 'index.html' %}
+
+{% block content %}
+    <section class="facilities" id="facilities">
+      <h1>Our Facilities</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+      <div class="row">
+        <div class="facilities-col">
+          <img src="{{ url_for('static', filename= 'images/library.png')}}" alt="library" />
+          <h3>Library</h3>
+          <p style="color:white">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+            facere asperiores.
+          </p>
+        </div>
+
+        <div class="facilities-col">
+          <img src="{{url_for('static', filename='images/basketball.png')}}" alt="library" />
+          <h3>Basketball Court</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+            facere asperiores.
+          </p>
+        </div>
+
+        <div class="facilities-col">
+          <img src="{{url_for('static', filename='images/cafeteria.png')}}" alt="library" />
+          <h3>Cafeteria</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+            facere asperiores. <br/>    
+
+
+          </p>
+        </div>
+      </div>
+    </section>
+    
+ 
+
+    <!-- testimonials -->
+{% endblock %}

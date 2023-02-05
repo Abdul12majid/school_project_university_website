@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"/>
+    <title>
+{% if tittle %}
+{{ tittle }}
+{% else %}
+CSC 319 - Group 10
+{% endif %}
+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+      integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <a href="index.html">
+          <img src="{{url_for('static', filename= 'images/University_of_Ilorin_logo.png')}}" alt="University logo"/>
+        </a>
+        <div class="nav-links" id="navLinks">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#course">Careers</a></li>
+            <li><a href="#facilities">Facilities</a></li>
+          </ul>
+        </div>
+        <i
+          class="bi bi-list"
+          id="bi-list"
+          onclick="showMenu()"
+          style="font-size: 30px; color: white"
+        ></i>
+      </nav>
+
+      <div
+        class="navbar-menu_container scale-up-center"
+        id="navMenuLinks"
+        style="display: none"
+      >
+        <div class="navbar-menu_container-links">
+          <i
+            class="bi bi-x"
+            onclick="hideMenu()"
+            style="font-size: 30px; color: white"
+          ></i>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#course">Careers</a></li>
+            <li><a href="{{url_for('facilities')}}">Facilities</a></li>
+          </ul>
+        </div>
+      </div>
+      </header>
+      
+      <div class="container">
+      	{% block content %}
+          
+          {% endblock %}
+      </div>
+
+    <!-- Course -->
+
+    <section class="course" id="course">
+      <h1>Careers</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+      <div class="row">
+        <div class="course-col">
+          <h3>Medicine</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident,
+            neque error est eos minima voluptates officiis modi tenetur suscipit
+            eaque ut rerum ducimus quaerat aliquid?
+          </p>
+        </div>
+
+        <div class="course-col">
+          <h3>Common Law</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident,
+            neque error est eos minima voluptates officiis modi tenetur suscipit
+            eaque ut rerum ducimus quaerat aliquid?
+          </p>
+        </div>
+
+        <div class="course-col">
+          <h3>Computer Science</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident,
+            neque error est eos minima voluptates officiis modi tenetur suscipit
+            eaque ut rerum ducimus quaerat aliquid?
+          </p>
+        </div>
+      </div>
+
+      <p><a href="#">View Other Careers</a></p>
+    </section>
+
+    <!-- Facilities -->
+
+    <section class="facilities" id="facilities">
+      <h1>Our Facilities</h1>
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+     <div class="row">
+       <div class="facilities-col">
+         <img src="{{ url_for('static', filename= 'images/library.png')}}" alt="library" />
+         <h3>Library</h3>
+         <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+            facere asperiores.
+         </p>
+       </div>
+
+       <div class="facilities-col">
+         <img src="{{url_for('static', filename='images/basketball.png')}}" alt="library" />
+         <h3>Basketball Court</h3>
+         <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+            facere asperiores.
+         </p>
+       </div>
+
+       <div class="facilities-col">
+         <img src="{{url_for('static', filename='images/cafeteria.png')}}" alt="library" />
+         <h3>Cafeteria</h3>
+         <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+            facere asperiores.
+         </p>
+       </div>
+     </div>
+   </section> 
+    
+
+    <!-- testimonials -->
+
+    <section class="testimonials">
+      <h1>What Our Students Say</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, id.</p>
+
+      <div class="row">
+        <div class="testimonials-col">
+          <img src="{{url_for('static', filename='images/user1.jpg')}}" alt="user1" />
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              fugiat voluptatibus alias? Vitae pariatur quibusdam iusto corrupti
+              tempore. Amet, exercitationem.
+            </p>
+            <h3>Lara Anikulapo</h3>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star"></i>
+          </div>
+        </div>
+
+        <div class="testimonials-col">
+          <img src="{{url_for('static', filename='images/user2.jpg')}}" alt="user2" />
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              fugiat voluptatibus alias? Vitae pariatur quibusdam iusto corrupti
+              tempore. Amet, exercitationem.
+            </p>
+            <h3>Ade uthman</h3>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- cta -->
+
+    <section class="cta">
+      <h1>Admission</h1>
+      <p>
+        Offering extraordinary freedom to explore, to collaborate, and to
+        challenge yourself
+      </p>
+      <div class="btn-div cta-btn-div">
+        <a href="#form" class="hero-btn">Apply For Admission</a>
+      </div>
+    </section>
+
+    <!-- registration form -->
+    <div class="wrapper">
+      <div class="title">
+        <h1>Application Form</h1>
+      </div>
+
+
+      <form id="form" action="#" method="get">
+      <div class="form">
+        <div class="inputfield">
+          <label for="fname">First Name:</label>
+          <input type="text" name="fname" id="fname" class="input" required/>
+        </div>
+
+        <div class="inputfield">
+          <label for="lname">Last Name:</label>
+          <input type="text" name="lname" id="lname" class="input" required/>
+        </div>
+
+        <div class="inputfield">
+          <label for="bdate">Birth Date:</label>
+          <input type="date" name="bdate" id="bdate" class="input" required/>
+        </div>
+
+        <div class="inputfield">
+          <label for="gender">Gender:</label>
+          <div class="custom-select">
+            <select name="gender" id="gender" required="">
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="inputfield">
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" class="input" required/>
+        </div>
+
+        <div class="inputfield">
+          <label for="pnumber">Phone Number:</label>
+          <input type="tel" name="pnumber" id="pnumber" class="input" required/>
+        </div>
+
+        <div class="inputfield">
+          <label for="course">Desired Course:</label>
+          <div class="custom-select">
+            <select name="course" id="course" required="">
+              <option value="">Select</option>
+              <option value="Medicine and Surgery">Medicine and Surgery</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="EduTech">EduTech</option>
+              <option value="Chem. Engineering">Chem. Engineering</option>
+              <option value="Mass Communication">Mass Communication</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="inputfield">
+          <input
+            type="submit"
+            name="submit"
+            id="submit"
+            value="Apply"
+            class="btn"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+
+    <footer class="footer" id="about">
+      <h3>About Us</h3>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br />
+        Sunt molestias mollitia voluptate suscipit ex nulla eveniet, debitis
+        ullam officiis soluta magnam animi distinctio doloremque aliquid.
+      </p>
+      <div class="icons">
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-twitter"></i>
+        <i class="bi bi-linkedin"></i>
+        <p>&copy; Group 10; CSC 319</p>
+      </div>
+    </footer>
+
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+  </body>
+</html>

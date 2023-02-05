@@ -1,0 +1,31 @@
+{% extend 'index.html' %}
+
+{% block content %}
+<div class="card text-center">
+  <div class="card-header">
+    {{current_user.name_db}} | {{x}}
+  </div>
+  <div class="card-body">
+  	<div class="container">
+  	<div class="row">
+  	<div class="col-8">
+  	
+    <h5 class="card-title">User Info</h5>
+    <p class="card-text" style="text-align: left;">
+    
+    Name: 
+    
+    
+    </p>
+  </div>
+  <div class="col-4">
+        	<img src="{{url_for('static', filename='images/default_pic.png')}}" width="80" align="right">
+        </div>
+  </div>
+  <div class="card-footer text-muted">
+        <a href="{{url_for('update_user', id=x)}}" class="btn btn-primary">Update info</a> |  <a href="{{url_for('logout')}}" class="btn btn-danger">Log out</a>
+        
+  </div>
+</div>
+
+{% endblock %}
